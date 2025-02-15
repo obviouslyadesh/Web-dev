@@ -1,0 +1,59 @@
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Use a semi-transparent overlay for better text visibility */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust transparency */
+    z-index: 1;
+}
+
+/* Ensure text appears on top of overlay */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Specific backgrounds */
+.hero-index {
+    background-image: url('img/cccc.webp');
+}
+
+.hero-home {
+    background-image: url('img/wd.webp');
+}
+
+.hero-about {
+    background-image: url('img/web design.jpg');
+}
+
+.hero-contact {
+    background-image: url('img/lc.avif');
+}
+
+/* Responsive Image Handling */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh; /* Adjust for smaller screens */
+        background-size: cover;
+    }
+}
+
+.text-white {
+    color: white;
+}
