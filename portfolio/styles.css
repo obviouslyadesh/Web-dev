@@ -5,13 +5,24 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
 }
 
-/* Use a semi-transparent overlay for better text visibility */
+/* Make the entire hero section clickable */
+.hero a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+/* Overlay for readability */
 .hero::before {
     content: "";
     position: absolute;
@@ -19,11 +30,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Adjust transparency */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
-/* Ensure text appears on top of overlay */
+/* Ensure text is above the overlay */
 .hero .container {
     position: relative;
     z-index: 2;
@@ -46,14 +57,9 @@
     background-image: url('img/lc.avif');
 }
 
-/* Responsive Image Handling */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero {
-        min-height: 80vh; /* Adjust for smaller screens */
-        background-size: cover;
+        min-height: 80vh;
     }
-}
-
-.text-white {
-    color: white;
 }
